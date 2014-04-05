@@ -39,8 +39,8 @@
 
   <body>
       <div class="panel panel-default" >
-       <div class="container">
-          <a class="brand" href="index.html"> <img  src="1.jpg"></a>
+       <div class="container" style = "background-color:#ffff; margin:50px;">
+          Formulario<b>
        </div>
       </div>
 
@@ -68,7 +68,7 @@
 
 var numPregunta = motivacion.length;
 var respuestas= [];
-var preguntas = [motivacion,hablidades];
+var preguntas = [motivacion,habilidades];
 var asigPregunta = 0;
 $('#pregunta').text(motivacion[0]);
 
@@ -79,7 +79,7 @@ function siguientePregunta(elem){
 
      if(numPregunta<0)
      {
-      numPregunta=hablidades.length;
+      numPregunta=habilidades.length;
       asigPregunta++;
       if(asigPregunta==2)
       {
