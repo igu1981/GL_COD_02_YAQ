@@ -31,33 +31,76 @@
           margin-top: 5px;
     }
  .list-group-item{
+
   text-align: center;
  }
+ .titulo{
+  float:center;
+  size:2em;
+  text-align:center;
+  top:0;
+ }
+ .cont{
+  float:left;
+ }
+ .container{
+  float:left;
+ }
+ .panel-default{
+  float:left;
+ }
+ #cuerpo{
+float:right;
+width:75%;
+ }
+ .limpiar{
+  clear:both;
+ }
+ .central{
+  margin-right:45%;
+}
+.cabecera{
+  background-color:rgba(62,62,62,1);
+  background-image:url('1.jpg');
+  background-repeat:no-repeat;
+  background-position:center;
+  height:167px;
+
+}
+#preguntas{
+  font-family:verdana;
+  font-size:1.5em;
+}
+ 
     </style>
 
   </head>
 
   <body>
-      <div class="panel panel-default" >
-       <div class="container" style = "text-align: center; background-color:#ffff; margin:50px;">
-          Formulario<b>
-       </div>
-      </div>
-
-      <div id="cuerpo">
-        <img src="images.jpg" class="image" style="float:left;"/>
-        <div class="container" id="preguntas" >
-            <ul class="list-group">
-            <li class="list-group-item" id="pregunta"></li>
-            <li class="list-group-item" id="Nunca" onclick = "siguientePregunta(this)">Nunca</li>
-            <li class="list-group-item" id="Casi nunca" onclick = "siguientePregunta(this)" >Casi nunca</li>
-            <li class="list-group-item" id="Algunas veces" onclick = "siguientePregunta(this)" >Algunas veces</li>
-            <li class="list-group-item" id="Muchas veces" onclick = "siguientePregunta(this)" >Muchas veces</li>
-            <li class="list-group-item" id="Siempre" onclick = "siguientePregunta(this)" >Siempre</li>
-          </ul>
+    <div >
+       <div class="titulo cabecera">
+          <p>Formulario<br />
+          <span id="titulo"></span></p>
         </div>
       </div>
-    
+      <div class="limpiar"></div>
+      <div class="panel panel-default"  >
+        <div class="cont">
+          <img src="2.jpg" />
+        </div>
+            <div id="cuerpo" class="container">
+              <div id="preguntas"  >
+                  <ul class="list-group">
+                  <li class="list-group-item" id="pregunta"></li>
+                  <li class="list-group-item" id="Nunca" onclick = "siguientePregunta(this)">Nunca</li>
+                  <li class="list-group-item" id="Casi nunca" onclick = "siguientePregunta(this)" >Casi nunca</li>
+                  <li class="list-group-item" id="Algunas veces" onclick = "siguientePregunta(this)" >Algunas veces</li>
+                  <li class="list-group-item" id="Muchas veces" onclick = "siguientePregunta(this)" >Muchas veces</li>
+                  <li class="list-group-item" id="Siempre" onclick = "siguientePregunta(this)" >Siempre</li>
+                </ul>
+              </div>
+            </div><!-- cuerpo -->
+      </div>
     <script src="js/jquery.min.js"></script>
     <script src="js/bootstrap.min.js"></script>
     <script src="js/docs.min.js"></script> 
@@ -70,6 +113,8 @@ var numPregunta = motivacion.length;
 var respuestas= [];
 var preguntas = [motivacion,habilidades];
 var asigPregunta = 0;
+var titulo= ['motivacion','habilidades'];
+$('#pregunta').text(titulo[asigPregunta]);
 $('#pregunta').text(motivacion[0]);
 
 function siguientePregunta(elem){
